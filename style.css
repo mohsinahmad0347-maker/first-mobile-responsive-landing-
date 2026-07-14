@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+/* ==========================================================================
+   1. GLOBAL & RESET STYLES (Optimized for width handling)
+   ========================================================================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+    background-color: #03203B;
+}
+
+/* ==========================================================================
+   2. HERO & HEADER SECTIONS
+   ========================================================================== */
+.container{
+    width: 100%;
+    min-height: 120vh; /* Changed from height to min-height to allow expansion */
+    background-image: url(./images/room.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+}
+
+/* ==========================================================================
+   DESKTOP NAVIGATION (Default)
+   ========================================================================== */
+.header {
+   display: flex;
+   border: 1px solid;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 25px;
+   text-transform: uppercase;
+   background-color: rgb(9, 21, 32);
+   border-radius: 10px;
+}
+.U{
+    color: aliceblue;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+.U::first-letter{
+    color: wheat;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Hide the mobile icons on desktop */
+nav a i {
+    display: none; 
+}
+
+a {
+   text-decoration: none;
+   font-weight: 500;
+   font-family: "Ubuntu", sans-serif;
+   color: rgb(244, 242, 242);
+   position: relative;
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+}
+
+a:hover {
+    color: rgb(171, 171, 253);
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+a::after {
+    content: '';
+    background-color: rgb(238, 6, 6);
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+
+
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 90vh;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+button{
+    width: 130px;
+    line-height: 3;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    font-family: "Ubuntu", sans-serif;
+    color: #023457;
+    border: 2px solid #023457;
+    margin-bottom: 20px;
+}
+
+button:hover{
+    border: 2px solid antiquewhite;
+    background-color: #023457;
+    color: antiquewhite;
+
+    scale: 1.1;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: 0px 15px 33px ;
+}
+
+/* Headings Class (.b) */
+.b{
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: clamp(32px, 5vw, 70px); /* Fluid size: shrinks on mobile, grows on desktop */
+    color: aliceblue;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.b::first-letter{
+    color: bisque;
+}
+
+#a{
+     font-family: "Ubuntu", sans-serif;
+     color: aliceblue;
+     font-size: clamp(18px, 2.5vw, 27px); /* Scalable body copy */
+     margin-bottom: 20px;
+     max-width: 800px;
+}
+
+#b{
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   3. FEATURES SECTION (4 items)
+   ========================================================================== */
+.features{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #03203B;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#d{
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    color: antiquewhite;
+    padding: 15px 5%;
+}
+
+.how{
+    flex: 1 1 200px; /* Highly responsive item boxes */
+    min-height: 45vh;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Center and style icons */
+.how i {
+    font-size: clamp(80px, 8vw, 130px);
+    color: antiquewhite;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   4. ABOUT SECTION (Two Columns)
+   ========================================================================== */
+.about{
+    background-color: #052f56;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+    color: bisque;
+    padding: 60px 5%;
+    gap: 30px;
+    align-items: center;
+}
+
+.image{
+    background-image: url(./images/office.jpg);
+    background-position: center;
+    background-size: cover;
+  width: 30vw;
+    border-radius: 20px;
+    flex: 1 1 450px; /* Allows image to shrink/grow */
+    height: 50vh;
+}
+
+.para{
+    flex: 1 1 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligned left for readability */
+    font-family: "Ubuntu", sans-serif;
+    font-size: 19px;
+}
+
+#o{
+    font-size: clamp(35px, 4vw, 50px);
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+
+.points{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#p{
+    font-size: clamp(24px, 3vw, 37px);
+    text-transform: capitalize;
+    color: aliceblue;
+    margin: 15px 0;
+}
+
+.fow{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.fow ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+li{
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* ==========================================================================
+   5. SERVICES SECTION (6 items)
+   ========================================================================== */
+.service{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #03203b;
+    padding: 60px 5%;
+}
+
+.head{
+    text-align: center;
+    font-family:"Ubuntu", sans-serif ;
+    color: antiquewhite;
+    margin-bottom: 50px;
+}
+
+#h{
+    color: aliceblue;
+    font-size: clamp(40px, 6vw, 69px);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.service1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service11{
+    flex: 1 1 300px; /* Wraps cleanly across tablet and mobile layouts */
+    min-height: 45vh;
+    padding: 20px;
+    text-align: center;
+    color: antiquewhite;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.service11 i {
+    font-size: clamp(80px, 8vw, 130px);
+    color: antiquewhite;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   6. GALLERY SECTION
+   ========================================================================== */
+.all{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0b2e50;
+    padding: 60px 5%;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.image1{
+    flex: 1 1 300px; /* 3-columns on desktop, stacks elegantly on mobile */
+    height: 40vh;
+    position: relative;
+    border: 1px solid wheat;
+    border-radius: 20px;
+    font-family: "Bricolage Grotesque", sans-serif;
+    overflow: hidden; /* Clips the inner glass hover element */
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.23);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.7px);
+    -webkit-backdrop-filter: blur(12.7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+    border-radius: 20px;
+}
+
+.content:hover{
+    opacity: 1;
+}
+
+.content h1{
+    font-size: clamp(28px, 4vw, 55px);
+    color: rgb(226, 171, 100);
+    margin-bottom: 20px;
+}
+
+.content>*{
+    transform:translateY(25px);
+    transition: transform 0.6s;
+}
+
+.content:hover>*{
+    transform: translateY(0px);
+}
+
+
+
+#m{ background-image: url(./images/ofice1.jpg); background-position: center; background-size: cover; }
+#q{ background-image: url(./images/ofice2.jpg); background-position: center; background-size: cover; }
+#r{ background-image: url(./images/ofice3.jpg); background-position: center; background-size: cover; }
+#s{ background-image: url(./images/ofice4.jpg); background-position: center; background-size: cover; }
+#t{ background-image: url(./images/ofice5.jpg); background-position: center; background-size: cover; }
+#u{ background-image: url(./images/ofice6.jpg); background-position: center; background-size: cover; }
+
+.btn{
+    background-color: rgb(247, 213, 168);
+    color: #0B2E50;
+    width: 110px;
+    line-height: 1.5;
+    padding: 8px;
+    border-radius: 40px;
+    border: 1px solid #0B2E50;
+}
+
+.btn:hover{
+    background-color: #0B2E50;
+    color: rgb(247, 213, 168);
+    border: 1px solid rgb(247, 213, 168);
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.5);
+    scale: 1.1;
+    transition: 0.7s;
+}
+
+/* ==========================================================================
+   7. CLIENTS/TESTIMONIALS
+   ========================================================================== */
+.cleints{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #03203B;
+    padding: 60px 5%;
+}
+
+.comment{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.pro{
+    flex: 1 1 300px;
+    min-height: 45vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: antiquewhite;
+    font-family:"Bricolage Grotesque", sans-serif ;
+}
+
+.tato{
+    width: 130px;
+    height: 130px;
+    border: 1px solid wheat;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+#tato1{ background-image: url(./images/pro1.jpg); background-position: center; background-size: cover; }
+#tato2{ background-image: url(./images/pro2.jpg); background-position: center; background-size: cover; }
+#tato3{ background-image: url(./images/pro3.jpg); background-position: center; background-size: cover; }
+#tato4{ background-image: url(./images/pr04.jpg); background-position: center; background-size: cover; }
+#tato5{ background-image: url(./images/pro5.jpg); background-position: center; background-size: cover; }
+#tato6{ background-image: url(./images/pro6.jpg); background-position: center; background-size: cover; }
+
+#A{
+    text-transform: capitalize;
+    font-family:"Bricolage Grotesque", sans-serif ;
+}
+
+/* ==========================================================================
+   8. TEAM SECTION (With pure CSS mobile visual ordering fix)
+   ========================================================================== */
+.team{
+    background-color: #0B2E50;
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px 5%;
+}
+
+.J{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.tea{
+    width: 22%;
+    height: 40vh;
+    border: 1px solid wheat;
+    border-radius: 15px;
+}
+
+.Y{
+    width: 22%;
+    min-height: 10vh;
+    color: antiquewhite;
+    font-family:"Bricolage Grotesque", sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#tea1{ background-image: url(./images/pro3.jpg); background-position: center; background-size: cover; }
+#tea2{ background-image: url(./images/pro5.jpg); background-position: center; background-size: cover; }
+#tea3{ background-image: url(./images/pro2.jpg); background-position: center; background-size: cover; }
+#tea4{ background-image: url(./images/pro1.jpg); background-position: center; background-size: cover; }
+
+/* ==========================================================================
+   9. CONTACT SECTION & FOOTER
+   ========================================================================== */
+.Contact{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #1e65ad;
+    text-align: center;
+    color: antiquewhite;
+    font-family:"Bricolage Grotesque", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.form{
+    margin-top: 50px;
+    border: 2px solid wheat;
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.7s;
+    padding: 20px;
+}
+
+.form:hover{
+    border-radius: 20px;
+    border: #02162a 2px solid;
+    backdrop-filter: blur(50px);
+}
+
+input{
+    border-radius: 40px;
+    line-height: 1.5;
+    padding: 5px 10px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+#E{
+  transform: translateY(40px);
+  border-radius: 40px;
+  line-height: 1.7;
+  color: #03203B;
+  background-color: antiquewhite;
+  border: 1px solid #03203B;
+  transition: all 0.7s;
+}
+
+#E:hover{
+    transform: translateY(5px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
+    color: antiquewhite;
+    background-color: #03203b;
+    border: 1px solid wheat;
+}
+
+/* Follow Us Wrapper */
+.F {
+    margin-top: 60px;
+}
+
+.fa-square-facebook,
+.fa-square-x-twitter,
+.fa-square-youtube,
+.fa-square-github {
+    border-radius: 10px;
+    color: rgb(244, 222, 195);
+    font-size: 50px;
+    text-align: center;
+    transition: all 0.7s;
+    display: inline-block;
+    margin: 10px;
+}
+
+.fa-square-facebook:hover{ background-color:rgb(244, 222, 195); border: #083563 1px solid; color: #1e65ad; scale: 1.1; }
+.fa-square-x-twitter:hover{ background-color:rgb(244, 222, 195); border: #020202 1px solid; color: #0b0d0e; scale: 1.1; }
+.fa-square-youtube:hover{ background-color:rgb(244, 222, 195);border: #eb261c 1px solid; color: #eb261c; scale: 1.1; }
+.fa-square-github:hover{ background-color:rgb(244, 222, 195);border: #020202 1px solid; color: #020202; scale: 1.1; }
+
+.H{
+     font-family:"Bricolage Grotesque", sans-serif;
+     margin-bottom: 20px;
+}
+
+.H::first-letter{
+    color: antiquewhite;
+}
+
+/* Copyright Bar (.K) */
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: #023457;
+    color: antiquewhite;
+    text-align: center;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+/* ==========================================================================
+   10. MEDIA QUERIES (The responsiveness magic)
+   ========================================================================== */
+/* ==========================================================================
+   MOBILE TOOL-FIT ICON NAV (Under 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* Header layout adapts to mobile */
+    .header {
+        flex-direction: row; /* Keep logo and tool-fit bar side-by-side */
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+
+    /* Transform the nav into a tight, consolidated "tool dock" package */
+    nav {
+        background-color: rgba(255, 255, 255, 0.1); /* Subtle glass dock background */
+        padding: 6px 12px;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        gap: 18px; /* Tightly pack icons */
+    }
+
+    /* Hide text spans to save valuable mobile screen width */
+    nav a span {
+        display: none;
+    }
+
+    /* Reveal and style the action-ready tool icons */
+    nav a i {
+        display: inline-block;
+        font-size: 1.3rem; /* Perfectly proportioned tap targets */
+        color: rgb(244, 242, 242);
+        padding: 6px;
+        transition: transform 0.3s, color 0.3s;
+    }
+
+    /* Prevent scale/underlines on touch screens and use a clean hover/tap glow */
+    a {
+        margin: 0;
+    }
+    
+    a::after {
+        display: none; /* Disable underline effect on mobile */
+    }
+
+    a:hover {
+        scale: 1.0; /* Prevent weird layout jumps on touch */
+    }
+
+    nav a:hover i {
+        color: rgb(171, 171, 253);
+        transform: translateY(-2px);
+    }
+}
+@media screen and (max-width: 768px) {
+
+    /* Header Nav vertical stacking */
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    a {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    /* Column layout resets */
+    .about {
+        flex-direction: column;
+        padding: 40px 15px;
+    }
+
+    .image {
+        width: 100%;
+        height: 35vh;
+    }
+
+    /* Resetting the Choose Us columns */
+    .points {
+        margin-right: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .fow {
+        justify-content: center;
+    }
+
+    .tt {
+        margin-left: 0;
+    }
+
+    /* Forcing all row-grids to clean vertical stacks */
+    .how,
+    .service11,
+    .image1,
+    .pro {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Team Layout order hack for mobile */
+    .J {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tea, .Y {
+        width: 80%;
+    }
+
+    /* Map images directly on top of their metadata when stacked */
+    #tea1 { order: 1; }
+    .Y:nth-of-type(1) { order: 2; margin-bottom: 30px; }
+
+    #tea2 { order: 3; }
+    .Y:nth-of-type(2) { order: 4; margin-bottom: 30px; }
+
+    #tea3 { order: 5; }
+    .Y:nth-of-type(3) { order: 6; margin-bottom: 30px; }
+
+    #tea4 { order: 7; }
+    .Y:nth-of-type(4) { order: 8; }
+}
